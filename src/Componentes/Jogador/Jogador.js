@@ -1,6 +1,6 @@
 import './Jogador.css'
 
-export const Jogador = ({nome, imagem, lane, corDeFundo, main}) => {
+export const Jogador = ({nome, imagem, lane, corDeFundo, main, nick}) => {
     return (
         <div className='jogador'>
             <div className='cabecalho' style={{backgroundColor: corDeFundo}}>
@@ -8,7 +8,7 @@ export const Jogador = ({nome, imagem, lane, corDeFundo, main}) => {
             </div>
             <div className='rodape'>
                 <h4 style={{color: corDeFundo}}>
-                    {nome}
+                    {nome}, ({nick})
                 </h4>
                 <h5>
                     {main}

@@ -13,6 +13,7 @@ export const Lanes = (props) => {
             corDeFundo={props.corPrimaria}
             key={jogador.nome} 
             nome={jogador.nome} 
+            nick={jogador.nick}
             main={jogador.main}
             lane={jogador.lane} 
             imagem={jogador.imagem}/>)}

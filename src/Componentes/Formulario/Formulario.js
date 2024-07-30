@@ -10,16 +10,19 @@ export const Formulario = (props) => {
     const [main, setMain] = useState('')
     const [imagem, setImagem] = useState('')
     const [lane, setLane] = useState('')
+    const [nick, setNick] = useState('')
 
     const aoSalvar = (evento) => {
         evento.preventDefault()
         props.aoJogadorCadastrado({
             nome,
+            nick,
             main,
             imagem,
             lane
         })
         setNome('')
+        setNick('')
         setMain('')
         setImagem('')
         setLane('')
@@ -35,6 +38,13 @@ export const Formulario = (props) => {
                     placeholder="Digite seu nome"
                     valor={nome}
                     aoAlterado={valor => setNome(valor)}
+                />
+                <CampoTexto 
+                    obrigatorio={true} 
+                    label="Nick" 
+                    placeholder="Digite seu nick"
+                    valor={nick}
+                    aoAlterado={valor => setNick(valor)}
                 />
                 <CampoTexto 
                     obrigatorio={true} 
