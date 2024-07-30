@@ -1,9 +1,9 @@
 import './Jogador.css'
 
-export const Jogador = ({nome, imagem, lane}) => {
+export const Jogador = ({nome, imagem, lane, corDeFundo}) => {
     return (
         <div className='jogador'>
-            <div className='cabecalho'>
+            <div className='cabecalho' style={{backgroundColor: corDeFundo}}>
                 <img src={imagem} alt={nome}/>
             </div>
             <div className='rodape'>

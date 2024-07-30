@@ -19,6 +19,10 @@ export const Formulario = (props) => {
             imagem,
             lane
         })
+        setNome('')
+        setMain('')
+        setImagem('')
+        setLane('')
     }
 
     return (

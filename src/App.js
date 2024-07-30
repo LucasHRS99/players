@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Banner from './Componentes/Banner';
 import Formulario from './Componentes/Formulario';
 import Lanes from './Componentes/Lanes';
+import Fundo from './Componentes/Fundo';
 
 function App() {
 
@@ -36,12 +37,12 @@ function App() {
   const [jogadores, setJogadores] = useState([])
 
   const novoJogador = (jogador) => {
-    console.log(jogador)
     setJogadores([...jogadores, jogador])
   }
 
   return (
     <div className="App">
+      <Fundo>
       <Banner/>
       <Formulario lanes={lanes.map(lane => lane.nome)} aoJogadorCadastrado={jogador => novoJogador(jogador)}/>
 
@@ -49,9 +50,9 @@ function App() {
       key={lane.nome} 
       nome={lane.nome} 
       corPrimaria={lane.corPrimaria} 
-      corSecundaria={lane.corSecundaria}/>)}
-      jogadores={jogadores}
-      
+      corSecundaria={lane.corSecundaria}
+      jogadores={jogadores.filter(jogador => jogador.lane === lane.nome)}/>)}
+      </Fundo>
     </div>
   );
 }

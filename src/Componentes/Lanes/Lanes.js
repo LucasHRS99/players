@@ -3,11 +3,19 @@ import './Lanes.css'
 
 export const Lanes = (props) => {
     return (
+        props.jogadores.length > 0 && 
         <section className='lane' style={{backgroundColor: props.corSecundaria}}>
             <h3 style={{borderColor: props.corPrimaria}}>
                 {props.nome}
             </h3>
-            {props.jogadores.map(jogador => <Jogador nome={jogador.nome} lane={jogador.lane} imagem={jogador.imagem}/>)}
+            <div className='jogadores'>
+            {props.jogadores.map(jogador => <Jogador 
+            corDeFundo={props.corPrimaria}
+            key={jogador.nome} 
+            nome={jogador.nome} 
+            lane={jogador.lane} 
+            imagem={jogador.imagem}/>)}
+            </div>
         </section>
     )
 }
